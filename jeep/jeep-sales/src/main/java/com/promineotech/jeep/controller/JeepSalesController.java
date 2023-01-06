@@ -19,46 +19,46 @@ import io.swagger.v3.oas.annotations.media.Schema;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.servers.Server;
 
-@RequestMapping("/jeeps")
+@RequestMapping("/jeeps")// Week 13
 @OpenAPIDefinition(info = @Info(title = "Jeep Sales Service"), servers = {
 	@Server(url = "http://localhost:8080", description = "Local server.")})
 public interface JeepSalesController {
 
 	//@formatter:off
-	@Operation(
+	@Operation(//Week 13
 		summary = "Returns a list of Jeeps",
 		description = "Returns a list of Jeeps given an optional model and/or trim",
 		responses = {
 			
-				@ApiResponse(responseCode = "200", 
+			@ApiResponse(responseCode = "200", //Week 13
 					description = "A list of Jeeps is returned", 
 					content = @Content(
 					mediaType = "application/json", 
 					schema = @Schema(
 					implementation = Jeep.class))),
 			
-			@ApiResponse(responseCode = "400", 
+			@ApiResponse(responseCode = "400",  //Week 13
 					description = "The request parameters are invalid", 
 					content = @Content(
 					mediaType = "application/json")),
 			
-			@ApiResponse(responseCode = "404", 
+			@ApiResponse(responseCode = "404",  //Week 13
 					description = "No Jeeps were found wih the input criteria", 
 					content = @Content(
 					mediaType = "application/json")),
 			
-			@ApiResponse(responseCode = "500", 
+			@ApiResponse(responseCode = "500",  //Week 13
 					description = "An unplanned error occured.", 
 					content = @Content(
 					mediaType = "application/json"))
 		},
-		parameters = {
+		parameters = { //Week 13
 			@Parameter(
 					name = "model", 
 					allowEmptyValue = false, 
 					required = false, 
 					description = "The model name (i.e., 'WRANGLER')"),
-			@Parameter(
+			@Parameter(  //Week 13
 					name = "trim", 
 					allowEmptyValue = false, 
 					required = false, 
@@ -66,7 +66,7 @@ public interface JeepSalesController {
 		}
 	)
 	
-	@GetMapping
+	@GetMapping  //Week 13
 	@ResponseStatus(code = HttpStatus.OK)
 	List<Jeep> fetchJeeps(
 			@RequestParam(required = false) 

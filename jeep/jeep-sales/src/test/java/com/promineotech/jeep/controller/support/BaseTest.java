@@ -6,16 +6,16 @@ import org.springframework.boot.test.web.server.LocalServerPort;
 
 import lombok.Getter;
 
-public class BaseTest {
+public class BaseTest {  //Week 13
   @LocalServerPort
   private int serverPort;
   
-  @Autowired
+  @Autowired  //Week 13
   @Getter
   private TestRestTemplate restTemplate;
   
   
-  protected String getBaseUri() {
+  protected String getBaseUri() {   //Week 13
 	  return String.format("http://localhost:%d/jeeps", serverPort);
 	  
   }
